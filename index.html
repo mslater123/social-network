@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Network Degrees of Separation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Social Network Degrees of Separation</h2>
+
+        <!-- Form to add people and friendships -->
+        <h3>Add People and Friendships</h3>
+        <form id="friendship-form">
+            <label for="person1">Person 1:</label>
+            <input type="text" id="person1" required>
+
+            <label for="person2">Person 2:</label>
+            <input type="text" id="person2" required>
+
+            <button type="submit">Add Friendship</button>
+        </form>
+
+        <!-- Form to find the shortest path between two people -->
+        <h3>Find Degrees of Separation</h3>
+        <form id="separation-form">
+            <label for="startPerson">Start Person:</label>
+            <input type="text" id="startPerson" required>
+
+            <label for="targetPerson">Target Person:</label>
+            <input type="text" id="targetPerson" required>
+
+            <button type="submit">Find Shortest Path</button>
+        </form>
+
+        <!-- Output friendships -->
+        <div class="friendships">
+            <h3>Friendships</h3>
+            <ul id="friendships-list"></ul>
+        </div>
+
+        <!-- Output results -->
+        <div class="result">
+            <h3>Result</h3>
+            <p id="result-output"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
