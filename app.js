@@ -1,18 +1,21 @@
+// Class for creating the Social Network
 class SocialNetwork {
+    // Constructor to create the network itself
     constructor() {
         this.network = {};
     }
 
+    // Add a person to the network
     addPerson(person) {
         if (!this.network[person]) {
             this.network[person] = [];
         }
     }
 
+    // Add a friendship to the network
     addFriendship(person1, person2) {
         this.addPerson(person1);
         this.addPerson(person2);
-        // Avoid adding duplicate friendships
         if (!this.network[person1].includes(person2)) {
             this.network[person1].push(person2);
         }
@@ -21,6 +24,7 @@ class SocialNetwork {
         }
     }
 
+    // Find the sortest path for 2 people that are added to the network
     findShortestPath(startPerson, targetPerson) {
         if (!this.network[startPerson] || !this.network[targetPerson]) {
             return 0;
@@ -48,6 +52,7 @@ class SocialNetwork {
         return 0;
     }
 
+    // Get all the friendships and display them on the page so its easier to find friendships
     getAllFriendships() {
         const friendships = [];
         for (let person in this.network) {
